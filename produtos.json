@@ -5,23 +5,43 @@
     "categoria": "Capilar",
     "descricao": "Enriquecida com Queratina e Manteiga de Cupuaçu. Reconstrução e força.",
     "preco": "A Consultar",
-    "imagem": "img/ozon-kesen.jpg"
+    "imagens": [
+         "img/ozon-kesen-frente.jpg"
+         "img/ozon-kesen-verso.jpg"
+         "img/ozon-reestruturador.jpg"
+    ]
   },
-  {
+   {
     "id": "cap-02",
-    "nome": "Ozon Blond Matizador",
+    "nome": "Ozon Cream Multifuncional",
+    "categoria": "Capilar",
+    "descricao": "Multifuncional 20 em 1; hipoalergênico",
+    "preco": "A Consultar",
+    "imagem": "img/ozon cream-multifuncional.jpg"
+  },
+   {
+    "id": "cap-03",
+    "nome": "Ozon",
     "categoria": "Capilar",
     "descricao": "Neutraliza o tom amarelado e oferece 3x mais brilho.",
     "preco": "A Consultar",
-    "imagem": "img/ozon-blond.jpg"
+    "imagem": "img/ozon blond-matizadora.jpg"
   },
   {
-    "id": "corp-01",
-    "nome": "Óleo Sofh Ozonizado",
-    "categoria": "Corporal",
-    "descricao": "Óleo de Girassol 100% natural. Cicatrizante e anti-inflamatório.",
+    "id": "cap-04",
+    "nome": "Ozon For Men",
+    "categoria": "Capilar",
+    "descricao": "Shampoo 2 em 1. com ação Anticaspa e Refrescante",
     "preco": "A Consultar",
-    "imagem": "img/sofh.jpg"
+    "imagem": "img/ozon-for men.jpg"
+  },
+  {
+    "id": "cap-05",
+    "nome": "Kit Master Curls",
+    "categoria": "Capilar",
+    "descricao": "Cachos TOTALMENTE IRRECONHECÍVEIS!",
+    "preco": "A Consultar",
+    "imagem": "img/ozon-cachos.jpg"
   },
   {
     "id": "dent-01",
