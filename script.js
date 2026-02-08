@@ -9,10 +9,8 @@ async function carregarProdutos() {
     try {
         const response = await fetch('produtos.json');
         todosProdutos = await response.json();
-        
         criarFiltros(todosProdutos);
         renderizarGrid(todosProdutos);
-        
     } catch (error) {
         console.error("Erro ao carregar catálogo:", error);
     }
@@ -20,10 +18,8 @@ async function carregarProdutos() {
 
 // Criar Botões de Categoria
 function criarFiltros(produtos) {
-    // Pega todas as categorias únicas do JSON
     const categorias = ['Todos', ...new Set(produtos.map(p => p.categoria))];
     const containerFiltros = document.getElementById('filtros-container');
-    
     if(containerFiltros) {
         containerFiltros.innerHTML = categorias.map(cat => 
             `<button onclick="filtrar('${cat}')" class="btn-filtro">${cat}</button>`
@@ -31,7 +27,7 @@ function criarFiltros(produtos) {
     }
 }
 
-// Filtrar Produtos
+// Filtrar
 function filtrar(categoria) {
     if (categoria === 'Todos') {
         renderizarGrid(todosProdutos);
@@ -41,13 +37,30 @@ function filtrar(categoria) {
     }
 }
 
-// Desenhar na Tela
+// --- LÓGICA DO CARROSSEL ---
 function renderizarGrid(lista) {
     const grid = document.getElementById('product-grid');
-    grid.innerHTML = lista.map(prod => `
+    
+    grid.innerHTML = lista.map((prod, index) => {
+        // Verifica se é array ou string antiga para evitar erros
+        let imagens = Array.isArray(prod.imagens) ? prod.imagens : [prod.imagem];
+        
+        // Cria o HTML das imagens (apenas a primeira ganha a classe 'active')
+        let imgsHtml = imagens.map((img, i) => 
+            `<img src="${img}" class="${i === 0 ? 'active' : ''}" onerror="this.src='https://via.placeholder.com/300?text=Ozonteck'">`
+        ).join('');
+
+        // Só mostra setas se tiver mais de 1 imagem
+        let botoesHtml = imagens.length > 1 ? `
+            <button class="carousel-btn prev" onclick="mudarSlide(this, -1)">&#10094;</button>
+            <button class="carousel-btn next" onclick="mudarSlide(this, 1)">&#10095;</button>
+        ` : '';
+
+        return `
         <div class="product-card">
-            <div class="img-container">
-                <img src="${prod.imagem}" alt="${prod.nome}" onerror="this.src='https://via.placeholder.com/300?text=Ozonteck'">
+            <div class="img-container carousel">
+                ${imgsHtml}
+                ${botoesHtml}
             </div>
             <div class="product-info">
                 <div class="tag-cat">${prod.categoria}</div>
@@ -59,30 +72,37 @@ function renderizarGrid(lista) {
                 </button>
             </div>
         </div>
-    `).join('');
+        `;
+    }).join('');
 }
 
-// Função de Compra
+// Função que gira o carrossel
+function mudarSlide(botao, direcao) {
+    const container = botao.parentElement; // Pega o container da foto
+    const slides = container.querySelectorAll('img'); // Pega todas as fotos desse produto
+    let ativoIndex = 0;
+
+    // Descobre qual foto está visível agora
+    slides.forEach((img, index) => {
+        if (img.classList.contains('active')) {
+            ativoIndex = index;
+            img.classList.remove('active'); // Esconde a atual
+        }
+    });
+
+    // Calcula a próxima foto (loop infinito)
+    let proximoIndex = ativoIndex + direcao;
+    if (proximoIndex >= slides.length) proximoIndex = 0;
+    if (proximoIndex < 0) proximoIndex = slides.length - 1;
+
+    // Mostra a nova foto
+    slides[proximoIndex].classList.add('active');
+}
+
+// Função de Compra (Mantida)
 async function comprar(nome, preco) {
-    // 1. Pixel simples
     if(typeof fbq !== 'undefined') fbq('track', 'InitiateCheckout', { content_name: nome, value: 0.00, currency: 'BRL' });
-
-    // 2. Pixel Backend (Se estiver usando Vercel)
-    const apiUrl = '/api/pixel'; 
-    try {
-        fetch(apiUrl, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-                eventName: 'InitiateCheckout',
-                eventData: { content_name: nome, value: preco },
-                userAgent: navigator.userAgent
-            })
-        });
-    } catch (e) { console.log('Backend pixel ignorado (dev mode)'); }
-
-    // 3. WhatsApp
-    const numeroWhatsApp = "5511999999999"; // <--- TROQUE PELO SEU NÚMERO
+    const numeroWhatsApp = "5511999999999"; 
     const mensagem = `Olá, vi o *${nome}* no site e gostaria de saber mais!`;
     window.open(`https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensagem)}`, '_blank');
 }
