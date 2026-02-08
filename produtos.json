@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "nome": "Óleo de Girassol Ozonizado",
+    "categoria": "Saúde",
+    "descricao": "Potente cicatrizante e regenerador celular.",
+    "preco": "R$ 89,90",
+    "imagem": "https://via.placeholder.com/300x300?text=Oleo+Girassol" 
+  },
+  {
+    "id": 2,
+    "nome": "Sabonete Íntimo Ozonizado",
+    "categoria": "Higiene",
+    "descricao": "Proteção e equilíbrio do pH natural.",
+    "preco": "R$ 45,00",
+    "imagem": "https://via.placeholder.com/300x300?text=Sabonete+Intimo"
+  },
+  {
+    "id": 3,
+    "nome": "Kit Revendedor Start",
+    "categoria": "Negócio",
+    "descricao": "Inicie seu negócio com os 5 produtos mais vendidos.",
+    "preco": "R$ 299,00",
+    "imagem": "https://via.placeholder.com/300x300?text=Kit+Revendedor"
+  }
+]
