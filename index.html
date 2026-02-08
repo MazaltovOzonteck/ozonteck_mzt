@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ozonteck - Saúde e Prosperidade</title>
+    <title>Ozonteck - Catálogo 2026</title>
     <link rel="stylesheet" href="style.css">
+    
     <script>
     !function(f,b,e,v,n,t,s)
     {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -14,7 +15,7 @@
     t.src=v;s=b.getElementsByTagName(e)[0];
     s.parentNode.insertBefore(t,s)}(window, document,'script',
     'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', 'SEU_ID_DO_PIXEL_AQUI');
+    fbq('init', 'SEU_ID_DO_PIXEL_AQUI'); // <--- COLOQUE SEU ID AQUI
     fbq('track', 'PageView');
     </script>
     <noscript><img height="1" width="1" style="display:none"
@@ -28,17 +29,16 @@
             <div class="logo">OZONTECK</div>
             <nav>
                 <a href="#home">Início</a>
-                <a href="#produtos">Produtos</a>
-                <a href="#oportunidade">Seja Revendedor</a>
+                <a href="#produtos">Catálogo</a>
             </nav>
-            <a href="https://wa.me/SEU_NUMERO" class="btn-cta">Falar no WhatsApp</a>
+            <a href="https://wa.me/SEU_NUMERO" class="btn-cta">WhatsApp</a>
         </div>
     </header>
 
     <section id="home" class="hero-section">
         <div class="hero-content">
-            <h1>O Poder do Ozônio na Sua Vida</h1>
-            <p>Tecnologia, Saúde e uma Oportunidade de Negócio Única.</p>
+            <h1>Ozonteck 2026</h1>
+            <p>Tecnologia do Ozônio e Perfumaria Fina.</p>
             <button onclick="scrollToProducts()" class="btn-primary">Ver Catálogo</button>
         </div>
     </section>
@@ -46,14 +46,17 @@
     <section id="produtos" class="product-section">
         <div class="container">
             <h2>Nossos Produtos</h2>
-            <p class="subtitle">Tecnologia ozonizada para saúde integrativa</p>
+            <p class="subtitle">Selecione uma categoria abaixo:</p>
+            
+            <div id="filtros-container" class="filtros-wrapper"></div>
+
             <div id="product-grid" class="grid-container">
                 </div>
         </div>
     </section>
 
     <footer class="wix-footer">
-        <p>&copy; 2026 Ozonteck - Parceiro Autorizado MazalTov Digital</p>
+        <p>&copy; 2026 Ozonteck - Parceiro Autorizado</p>
     </footer>
 
     <script src="script.js"></script>
