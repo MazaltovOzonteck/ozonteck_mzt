@@ -1,26 +1,82 @@
 [
   {
-    "id": 1,
-    "nome": "Óleo de Girassol Ozonizado",
-    "categoria": "Saúde",
-    "descricao": "Potente cicatrizante e regenerador celular.",
-    "preco": "R$ 89,90",
-    "imagem": "https://via.placeholder.com/300x300?text=Oleo+Girassol" 
+    "id": "cap-01",
+    "nome": "Linha Ozon Kesen",
+    "categoria": "Capilar",
+    "descricao": "Enriquecida com Queratina e Manteiga de Cupuaçu. Reconstrução e força.",
+    "preco": "A Consultar",
+    "imagem": "img/ozon-kesen.jpg"
   },
   {
-    "id": 2,
-    "nome": "Sabonete Íntimo Ozonizado",
+    "id": "cap-02",
+    "nome": "Ozon Blond Matizador",
+    "categoria": "Capilar",
+    "descricao": "Neutraliza o tom amarelado e oferece 3x mais brilho.",
+    "preco": "A Consultar",
+    "imagem": "img/ozon-blond.jpg"
+  },
+  {
+    "id": "corp-01",
+    "nome": "Óleo Sofh Ozonizado",
+    "categoria": "Corporal",
+    "descricao": "Óleo de Girassol 100% natural. Cicatrizante e anti-inflamatório.",
+    "preco": "A Consultar",
+    "imagem": "img/sofh.jpg"
+  },
+  {
+    "id": "dent-01",
+    "nome": "Ozon Fresh",
     "categoria": "Higiene",
-    "descricao": "Proteção e equilíbrio do pH natural.",
-    "preco": "R$ 45,00",
-    "imagem": "https://via.placeholder.com/300x300?text=Sabonete+Intimo"
+    "descricao": "Creme dental ozonizado. Proteção da gengiva e redução da inflamação.",
+    "preco": "A Consultar",
+    "imagem": "img/ozon-fresh.jpg"
   },
   {
-    "id": 3,
-    "nome": "Kit Revendedor Start",
-    "categoria": "Negócio",
-    "descricao": "Inicie seu negócio com os 5 produtos mais vendidos.",
-    "preco": "R$ 299,00",
-    "imagem": "https://via.placeholder.com/300x300?text=Kit+Revendedor"
+    "id": "facial-01",
+    "nome": "Lumino 3 Sérum Facial",
+    "categoria": "Facial",
+    "descricao": "Sérum facial ozonizado para nutrição profunda.",
+    "preco": "A Consultar",
+    "imagem": "img/lumino3.jpg"
+  },
+  {
+    "id": "sup-01",
+    "nome": "Ozon Flex",
+    "categoria": "Suplementos",
+    "descricao": "Com colágeno tipo II. Suporte para articulações e movimento.",
+    "preco": "A Consultar",
+    "imagem": "img/ozon-flex.jpg"
+  },
+  {
+    "id": "sup-02",
+    "nome": "Mellatozon",
+    "categoria": "Suplementos",
+    "descricao": "Suplemento de melatonina em gotas. Auxilia no sono.",
+    "preco": "A Consultar",
+    "imagem": "img/mellatozon.jpg"
+  },
+  {
+    "id": "perf-01",
+    "nome": "Max Boss (M)",
+    "categoria": "Perfumaria",
+    "descricao": "Inspiração: Hugo Boss Man. Aromático Verde.",
+    "preco": "A Consultar",
+    "imagem": "img/max-boss.jpg"
+  },
+  {
+    "id": "perf-02",
+    "nome": "VG Sexy (F)",
+    "categoria": "Perfumaria",
+    "descricao": "Inspiração: 212 Sexy. Oriental Floral com notas doces.",
+    "preco": "A Consultar",
+    "imagem": "img/vg-sexy.jpg"
+  },
+  {
+    "id": "perf-03",
+    "nome": "Rhino Royale",
+    "categoria": "Perfumaria Árabe",
+    "descricao": "Linha exclusiva Árabe Ozonteck. Alta fixação.",
+    "preco": "A Consultar",
+    "imagem": "img/rhino-royale.jpg"
   }
 ]
